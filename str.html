@@ -1,116 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
-
-    <title>firstTask</title>
+    <title>Hamza Table Task</title>
     <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="style.scss">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   </head>
   <body>
-    <!--UI Design-->
-    <div class="ui form">
-      <div class="fields">
-        <div class="field">
-          <label>Name</label>
-          <input type="text" placeholder="Name">
+    <!-- start building first task by Jemy1234-->
+    <div class="main" ng-app="myApp" ng-controller="myCtrl">
+      <!-- form building using semantic-ui-->
+      <div class="ui form">
+        <div class="fields">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" ng-model="name" placeholder="Name">
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input type="text" ng-model="phone" placeholder="Phone">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="text" ng-model="email" placeholder="Email">
+          </div>
         </div>
-        <div class="field">
-          <label>Phone</label>
-          <input type="text" placeholder="Phone">
-        </div>
-        <div class="field">
-          <label>Email</label>
-          <input type="text" placeholder="Email">
+        <button class="medium ui button" ng-click="add()">+ Contact</button>
+        <div class="doro">
+          <p>{{msg}}</p>
         </div>
       </div>
-      <button class="medium ui button">Add Contact</button>
+      <!-- table building for taking the data from the form-->
+      <table class="ui striped table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Lilki</td>
+            <td>01020250657</td>
+            <td>jhlilk22@yahoo.com</td>
+            <td> 
+              <button class="tiny ui button">Edit</button>
+              <button class="tiny ui button">delete</button>
+            </td>
+          </tr>
+          <tr ng-repeat="contact in details">
+            <td>{{contact.name}}</td>
+            <td>{{contact.phone}}</td>
+            <td>{{contact.email}}</td>
+            <td ng-repeat="contact in details">
+              <button class="tiny ui button">Edit</button>
+              <button class="tiny ui button" ng-click="removeItem($index)">delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
-    <table class="ui striped table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Phone</th>
-          <th>Email</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>John Lilki</th>
-          <th>01020250657</th>
-          <th>jhlilk22@yahoo.com</th>
-          <th> 
-            <button class="tiny ui button">Edit</button>
-            <button class="tiny ui button">delete</button>
-          </th>
-        </tr>
-        <tr>
-          <th>Jamie Harington</th>
-          <th>01028930657</th>
-          <th>jamieharingonton@yahoo.com</th>
-          <th> 
-            <button class="tiny ui button">Edit</button>
-            <button class="tiny ui button">delete</button>
-          </th>
-        </tr>
-        <tr>
-          <th>Jill Lewis</th>
-          <th>01020292657</th>
-          <th>jilsewris22@yahoo.com</th>
-          <th> 
-            <button class="tiny ui button">Edit</button>
-            <button class="tiny ui button">delete</button>
-          </th>
-        </tr>
-        <tr>
-          <th>John Lilki</th>
-          <th>01020250657</th>
-          <th>jhlilk22@yahoo.com</th>
-          <th> 
-            <button class="tiny ui button">Edit</button>
-            <button class="tiny ui button">delete</button>
-          </th>
-        </tr>
-        <tr>
-          <th>Harington</th>
-          <th>01098450659</th>
-          <th>jilsewris22@yahoo.com</th>
-          <th> 
-            <button class="tiny ui button">Edit</button>
-            <button class="tiny ui button">delete</button>
-          </th>
-        </tr>
-      </tbody>
-    </table>
-    <!--
-    <div ng-app="">
-      <p>Name : <input type="text" ng-model="name" placeholder="name">
-      </p>
-      <h1>Hello {{name}}</h1>
-    </div> 
-
-    <script>
-var app = angular.module("myShoppingList", []); 
-app.controller("myCtrl", function($scope) {
-    $scope.products = ["Milk", "Bread", "Cheese"];
-    $scope.addItem = function () {
-        $scope.products.push($scope.addMe);
-    }    
-});
-</script>
-
-<div ng-app="myShoppingList" ng-controller="myCtrl">
-  <ul>
-    <li ng-repeat="x in products">{{x}}</li>
-  </ul>
-  <input ng-model="addMe">
-  <button ng-click="addItem()">Add</button>
-</div>
-
-<p>Write in the input field to add items.</p>-->
-        <script src="js/semantic.min.js"></script>
-        <script src="js/app.js"></script>
-    </body>
+    <!-- javascript files links-->
+    <script src="js/semantic.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
