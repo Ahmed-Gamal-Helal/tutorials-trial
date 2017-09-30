@@ -1,3 +1,30 @@
-/* No CSS */ 
+.main {
+  margin: 15px;
+}
+
+.main .ui.form {
+  text-align: center;
+}
+
+.main .ui.form .fields {
+  display: flex;
+}
+
+.main .ui.form .fields .field {
+  flex: 1;
+}
+
+.main .ui.form .fields button {
+  margin: 25px 15px;
+}
+
+.main .ui.form .fields div {
+  margin: 25px 15px;
+}
+
+.main table thead {
+  margin-top: 30px;
+}
+ 
 
  /*# sourceMappingURL= style1.css.map */

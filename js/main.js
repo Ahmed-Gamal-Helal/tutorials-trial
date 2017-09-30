@@ -2,10 +2,11 @@ var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
 
     $scope.details = [];
+    $scope.list = [];
     $scope.msg = '';
 
     // first function to add the input data
-    
+
     $scope.add = function () {
         if (!$scope.name || !$scope.phone || !$scope.email) {
             $scope.msg = "Can not be displayed";

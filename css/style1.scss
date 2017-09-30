@@ -1,0 +1,24 @@
+.main {
+    margin: 15px;
+    .ui.form {
+        text-align: center;
+        
+        .fields {
+            display: flex;
+            .field {
+                flex: 1;
+            }
+        button {
+            margin: 25px 15px;
+        }
+        div {
+            margin: 25px 15px;
+        }
+        }
+    }
+    table {
+        thead {
+            margin-top: 30px;
+            }
+    }
+}
